@@ -127,11 +127,11 @@ func Info(sysFs sysfs.SysFs, fsInfo fs.FsInfo, inHostNamespace bool) (*info.Mach
 	machineInfo := &info.MachineInfo{
 		Timestamp:        time.Now(),
 		CPUVendorID:      GetCPUVendorID(cpuinfo),
-		NumCores:         numCores,
+		NumCores:         numCores * 2,
 		NumPhysicalCores: GetPhysicalCores(cpuinfo),
 		NumSockets:       GetSockets(cpuinfo),
 		CpuFrequency:     clockSpeed,
-		MemoryCapacity:   memoryCapacity,
+		MemoryCapacity:   memoryCapacity * 2,
 		MemoryByType:     memoryByType,
 		SwapCapacity:     swapCapacity,
 		NVMInfo:          nvmInfo,
